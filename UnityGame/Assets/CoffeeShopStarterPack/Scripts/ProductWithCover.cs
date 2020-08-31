@@ -28,20 +28,27 @@ namespace PW
 
         bool IsAnimating = false;
 
+        void Start()
+        {
+            InvokeRepeating("ActiveMovement", 2.0f, 5.0f);
+        }
+
         void OnEnable() {
             m_collider = GetComponent<Collider>();
         }
 
 
+       /*
         public void HandleCoverCloseClick()
         {
             if (IsAnimating)
                 return;
             StartCoroutine(OpenCloseDisplay(false, false));
         }
+       */
 
 
-        private void OnMouseDown()
+        private void ActiveMovement()
         {
             if (IsAnimating)
                 return;
@@ -49,6 +56,7 @@ namespace PW
             //Open the cover
             StartCoroutine(OpenCloseDisplay(true, autoCloseCover));
         }
+
         IEnumerator OpenCloseDisplay(bool open, bool alsoReverse = false)
         {
             IsAnimating = true;

@@ -25,6 +25,8 @@ namespace PW
             m_collider = GetComponent<Collider>();
             m_collider.enabled = false;
         }
+
+       /*
         private void OnMouseDown()
         {
 
@@ -35,6 +37,7 @@ namespace PW
                 m_collider.enabled = false;
             }
         }
+       */
 
         public void ActivateCollider()
         {
