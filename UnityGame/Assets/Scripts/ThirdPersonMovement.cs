@@ -15,9 +15,39 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public Animator animator;
 
+    public float gravity = -9.81f;
+    public float JumpHight = 50f;
+    bool isGrounded;
+    float jumpdist = 0f;
+
+    public Transform groundCheck;
+    public float groundDistance = 1.5f;
+    public LayerMask groundMask;
+
+
+
     // Update is called once per frame
     void Update()
     {
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            jumpdist = Mathf.Sqrt(JumpHight * -3.0f * gravity);
+        }
+
+        if (isGrounded &&  jumpdist< 0)
+        {
+            jumpdist = -2f;
+        }
+
+        jumpdist += gravity * Time.deltaTime;
+        Vector3 directionUp = new Vector3(0f, jumpdist, 0f);
+
+        controller.Move(directionUp * Time.deltaTime);
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
