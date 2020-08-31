@@ -35,7 +35,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            jumpdist = Mathf.Sqrt(JumpHight * -3.0f * gravity);
+            jumpdist = Mathf.Sqrt(JumpHight * -2.0f * gravity);
         }
 
         if (isGrounded &&  jumpdist< 0)
