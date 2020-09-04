@@ -24,6 +24,8 @@ public class SlimeController : MonoBehaviour
     public float groundDistance = 1.5f;
     public LayerMask groundMask;
 
+    public int pointsTotal = 0;
+
 
 
     // Update is called once per frame
@@ -73,5 +75,7 @@ public class SlimeController : MonoBehaviour
 
 		// trigger audio playback and emit particles from particle system
 		GetComponent<ParticleSystem>().Play();
+        pointsTotal += 100;
+
 	}
 }
