@@ -25,9 +25,8 @@ public class SlimeController : MonoBehaviour
     public LayerMask groundMask;
 
     public int pointsTotal = 0;
-
-
-
+    public int pointstoLevelUP = 500;
+    
     // Update is called once per frame
     void Update()
     {
