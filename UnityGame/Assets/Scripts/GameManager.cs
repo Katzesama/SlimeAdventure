@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // reference: Brackeys' tutorial
+
     public float restartDelay = 1f;
 
     public GameObject completeLevelUI;

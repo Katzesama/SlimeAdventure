@@ -75,6 +75,9 @@ public class SlimeController : MonoBehaviour
 		// trigger audio playback and emit particles from particle system
 		GetComponent<ParticleSystem>().Play();
         pointsTotal += 100;
+        if (pointsTotal >= 500){
+            GameObject.FindObjectOfType<GameManager>().CompleteLevel();
+        }
 
 	}
 }
