@@ -80,4 +80,10 @@ public class SlimeController : MonoBehaviour
         }
 
 	}
+
+    public void Die()
+    {
+        animator.SetTrigger("die");
+        GameObject.FindObjectOfType<GameManager>().Lose();
+    }
 }
