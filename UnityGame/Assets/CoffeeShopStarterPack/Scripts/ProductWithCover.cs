@@ -80,7 +80,6 @@ namespace PW
                 curTime -= Time.deltaTime;
                 yield return null;
             }
-            m_collider.enabled = !open;
 
             coverObject.transform.position = finalPos;
             
@@ -96,8 +95,6 @@ namespace PW
                 yield return StartCoroutine(OpenCloseDisplay(!open, false));
                 yield break;
             }
-
-            m_collider.enabled = !open;
 
             if (open)
                 coverObject.GetComponent<OnClickCoverHelper>().ActivateCollider();

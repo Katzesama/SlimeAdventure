@@ -20,11 +20,6 @@ namespace PW
         [SerializeField]
         public UnityEvent methodToCall;
         Collider m_collider;
-        void OnEnable()
-        {
-            m_collider = GetComponent<Collider>();
-            m_collider.enabled = false;
-        }
 
        /*
         private void OnMouseDown()
